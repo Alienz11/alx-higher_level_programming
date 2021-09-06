@@ -1,2 +1,2 @@
 #!/bin/bash
-$PYFILE=0-run
+#!/usr/bin/python3 $PYFILE=0-run
