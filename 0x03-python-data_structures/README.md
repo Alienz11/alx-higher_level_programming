@@ -1,0 +1,1 @@
+**This folder/directory displays all the under-pinnings of Data structures, Lists and Truples in Python programming language**
