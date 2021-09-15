@@ -6,4 +6,4 @@ def square_matrix_simple(matrix=[]):
     my_list (list): The list of integers
     '''
     new_matrix = [[(m[i] ** 2) for i in range(3)] for m in matrix]
-    print(new_matrix)
+    return new_matrix
