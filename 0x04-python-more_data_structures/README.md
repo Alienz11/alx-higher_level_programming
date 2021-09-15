@@ -1,0 +1,1 @@
+**This folder/directory displays all the under-pinnings of Data Structures(set, dictionaries) and Lambda Operators in Python programming language**
