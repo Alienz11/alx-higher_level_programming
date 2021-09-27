@@ -9,4 +9,4 @@ def safe_print_list(my_list=[], x=0):
         print(num)
         return nb_print
     except:
-        print("Unknown error occured")
+        print("Unknown error occurred")
