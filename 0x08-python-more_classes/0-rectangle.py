@@ -3,8 +3,9 @@
 A module for working with rectangles.
 """
 
-class Square:
+
+class Rectangle:
     """
-    Represents a 2D 4 sided Polygon with 2 set of equal sides (Height and Width).
+    Represents a 2D 4 sided Polygon with 2 set of equal sides.
     """
     pass
