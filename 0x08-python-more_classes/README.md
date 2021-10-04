@@ -1,0 +1,1 @@
+**This folder/directory displays all the under-pinnings of Classes and Objects, with emphases on the __str__ and __repr__ in Python programming language**
