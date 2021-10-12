@@ -12,5 +12,8 @@ def from_json_string(my_str):
         otherwise an exception is thrown.
     '''
     import json
-    x = json.dumps(my_str)
+    from io import StringIO
+
+    io = StringIO(my_str)
+    x = json.load(io)
     return x
