@@ -17,7 +17,7 @@ class Student:
     def to_json(self):
         '''Retrieves a dictionary of this student's attributes.
         Returns:
-            dict: A dictionary of this student's attributes.
+            dict : A dictionary of this student's attributes.
         '''
         if '__dict__' in dir(self):
             return self.__dict__
