@@ -9,7 +9,8 @@ def write_file(filename="", text=""):
         filename : A given file.
         text : A string of words to be written into a file.
     Returns:
-        f : The standard output of the file.
+        n : The f.write function of the text lenght.
     '''
-    with open(filename, "w") as f:
-        f.write(text)
+    with open(filename, 'w') as f:
+        n = f.write(text)
+    return n
