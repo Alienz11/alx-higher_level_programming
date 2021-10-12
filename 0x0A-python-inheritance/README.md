@@ -1,0 +1,1 @@
+**This folder/directory displays all the under-pinnings of Inheritance in Python programming language**
