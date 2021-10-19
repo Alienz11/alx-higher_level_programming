@@ -6,7 +6,7 @@ This project contains some tasks for reviewing everything learned previously in 
 
 ## Tasks To Complete
 
-+ [ ] 0\. If it's not tested it doesn't work <br/>_**[tests/](tests/)**_ contains unit tests for all the files, classes and methods and all Python files are PEP 8 or pycodestyle (version 2.x) validated.
++ [x] 0\. If it's not tested it doesn't work <br/>_**[tests/](tests/)**_ contains unit tests for all the files, classes and methods and all Python files are PEP 8 or pycodestyle (version 2.x) validated.
 + [x] 1\. Base class <br/>_**[models/](models/)**_ contains a file ([\_\_init\_\_.py](models/__init__.py)) that makes the folder become a package. <br/> _**[models/base.py](models/base.py)**_ contains a class `Base` that will be the “base” of all other classes in this project:
   + Private class attribute `__nb_objects = 0`.
   + Class constructor: `def __init__(self, id=None):`. The public instance attribute `id` is assigned with this argument's value if the argument's value is not `None`, otherwise `__nb_objects` is incremented and `__nb_objects`'s new value is assigned to the public instance attribute `id`.
