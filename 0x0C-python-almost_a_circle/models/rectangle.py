@@ -11,7 +11,6 @@ class Rectangle(Base):
 
     def __init__(self, width, height, x=0, y=0, id=None):
         """Initializes a new rectangle object.
-
         Args:
             width (int): The width of this rectangle.
             height (int): The height of this rectangle.
@@ -91,7 +90,6 @@ class Rectangle(Base):
 
     def area(self):
         """Computes the area of this rectangle.
-
         Returns:
             int: The area of this rectangle.
         """
@@ -107,7 +105,6 @@ class Rectangle(Base):
 
     def __str__(self):
         """Creates a string representation of this polygon.
-
         Returns:
             str: A string representation of this polygon.
         """
@@ -125,7 +122,6 @@ class Rectangle(Base):
 
     def update(self, *args, **kwargs):
         """Updates the attributes of this polygon.
-
         Args:
             args (tuple): A tuple of non-keyword arguments.
             kwargs (dict): A dictionary of keyword arguments.
@@ -140,7 +136,6 @@ class Rectangle(Base):
 
     def to_dictionary(self):
         """Creates a dictionary representation of this polygon.
-
         Returns:
             dict: A dictionary representation of this polygon.
         """

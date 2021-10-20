@@ -15,7 +15,6 @@ class Base:
 
     def __init__(self, id=None):
         """Initializes a new polygon object with the given id.
-
         Args:
             id (int): The id of this polygon object.
         """
@@ -28,10 +27,8 @@ class Base:
     @staticmethod
     def to_json_string(list_dictionaries):
         """Creates the JSON representation of a list of dictionaries.
-
         Args:
             list_dictionaries (list): A list of dictionaries.
-
         Returns:
             str: A JSON representation of the list of dictionaries.
         """
@@ -42,7 +39,6 @@ class Base:
     @classmethod
     def save_to_file(cls, list_objs):
         """Saves a list of polygons to a file in JSON format.
-
         Args:
             list_objs (list): A list of polygons.
         """
@@ -58,10 +54,8 @@ class Base:
     @staticmethod
     def from_json_string(json_string):
         """Creates a list from its JSON representation.
-
         Args:
             json_string (str): A JSON string representation of a list.
-
         Returns:
             list: A JSON representation of the list of dictionaries.
         """
@@ -73,27 +67,23 @@ class Base:
     @classmethod
     def create(cls, **dictionary):
         """Creates a polygon with the given attributes.
-
         Args:
             dictionary (dict): A dictionary of the object's attributes.
-
         Returns:
             Base: A polygon object with the given attributes.
         """
         polygons = {
-            'Rectangle': (1, 1, 1, 0, None),
+            'Rectangle': (1, 1, 0, 0, None),
             'Square': (1, 0, 0, None),
         }
         if cls.__name__ in polygons.keys():
             polygon = cls(*polygons[cls.__name__])
             polygon.update(**dictionary)
             return polygon
-        return None
 
     @classmethod
     def load_from_file(cls):
         """Loads a list of polygons from a file in JSON format.
-
         Returns:
             list: A list of polygons.
         """
@@ -111,7 +101,6 @@ class Base:
     @classmethod
     def save_to_file_csv(cls, list_objs):
         """Saves a list of polygons to a file in CSV format.
-
         Args:
             list_objs (list): A list of polygons.
         """
@@ -124,9 +113,9 @@ class Base:
         }
         vals_list = []
         if list_objs is not None:
+            poly_name = cls.__name__
             for obj in list_objs:
-                poly_name = obj.__class__.__name__
-                if poly_name in poly_fmt_fxns:
+                if (type(obj) is cls) and (poly_name in poly_fmt_fxns):
                     vals_list.append('{}\n'.format(
                         poly_fmt_fxns[poly_name](obj)))
         with open(file_name, mode='w', encoding='utf-8') as file:
@@ -135,12 +124,11 @@ class Base:
     @classmethod
     def load_from_file_csv(cls):
         """Loads a list of polygons from a file in CSV format.
-
         Returns:
             list: A list of polygons.
         """
         poly_name = cls.__name__
-        file_name = '{poly_name}.csv'.format(poly_name)
+        file_name = '{}.csv'.format(poly_name)
         poly_fmt_fxns = {
             'Rectangle': lambda x: {
                 'id': int(x[0]),
@@ -157,17 +145,17 @@ class Base:
             },
         }
         poly_fmt = {
-            'Rectangle': r'([^,]+,){5,}',
-            'Square': r'([^,]+,){4,}',
+            'Rectangle': r'\s*[^,]+,[^,]+,[^,]+,[^,]+,[^,]+',
+            'Square': r'\s*[^,]+,[^,]+,[^,]+,[^,]+',
         }
         lines = []
         attr_dicts = []
         if os.path.isfile(file_name):
             with open(file_name, mode='r') as file:
                 for line in file.readlines():
-                    attrs_match = re.fullmatch(poly_fmt[poly_name], line)
+                    attrs_match = re.match(poly_fmt[poly_name], line)
                     if attrs_match is not None:
-                        cols = line.split(',')
+                        cols = line.strip().split(',')
                         attr_dicts.append(poly_fmt_fxns[poly_name](cols))
         cls_list = list(map(lambda x: cls.create(**x), attr_dicts))
         return cls_list
@@ -175,7 +163,6 @@ class Base:
     @staticmethod
     def draw(list_rectangles, list_squares):
         """Draws the polygons in each list using Turtle graphics.
-
         Args:
             list_rectangles (list): A list of Rectangle objects.
             list_squares (list): A list of Square objects.

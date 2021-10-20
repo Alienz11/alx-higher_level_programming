@@ -11,7 +11,6 @@ class Square(Rectangle):
 
     def __init__(self, size, x=0, y=0, id=None):
         """Initializes a new square object.
-
         Args:
             size (int): The width and height of this square.
             x (int): The horizontal position of this square.
@@ -35,7 +34,6 @@ class Square(Rectangle):
 
     def __str__(self):
         """Creates a string representation of this polygon.
-
         Returns:
             str: A string representation of this polygon.
         """
@@ -52,7 +50,6 @@ class Square(Rectangle):
 
     def update(self, *args, **kwargs):
         """Updates the attributes of this polygon.
-
         Args:
             args (tuple): A tuple of non-keyword arguments.
             kwargs (dict): A dictionary of keyword arguments.
@@ -67,7 +64,6 @@ class Square(Rectangle):
 
     def to_dictionary(self):
         """Creates a dictionary representation of this polygon.
-
         Returns:
             dict: A dictionary representation of this polygon.
         """
