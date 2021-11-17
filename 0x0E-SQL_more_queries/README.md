@@ -1,5 +1,3 @@
-**This project contains tasks introducing more of the basic concepts in MySQL.**
-
 # SQL - More queries
 
 [![sqlstyle.guide](https://img.shields.io/badge/style-sqlstyle.guide-brightgreen.svg)](https://www.sqlstyle.guide/)
