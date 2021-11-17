@@ -5,7 +5,7 @@ USE hbtn_0d_usa;
 -- Creates a table with a column that has automatically generated values
 -- and is also the primary key
 CREATE TABLE IF NOT EXISTS states(
-    id INT NULL PRIMARY KEY,
+    id INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
     name VARCHAR(256) NOT NULL,
     UNIQUE(id)
 );
