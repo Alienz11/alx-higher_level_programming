@@ -1,14 +1,16 @@
 #!/usr/bin/node
-const args = process.argv[2];
-
-if (args === undefined) {
-  console.log(1);
-} else {
-  let i = Number.parseInt(args);
-  let sum = 0;
-  while (i > 0) {
-    sum += i;
-    i--;
+/**
+ * factorial - Computes the factorial of a number.
+ * @num - The number.
+ *
+ * @returns The factorial of the number.
+ */
+function factorial (num) {
+  if (Number.isNaN(num) || (num <= 0)) {
+  return 1;
+  } else {
+    return num * factorial(num - 1);
   }
-  console.log(sum);
 }
+
+console.log(factorial(Number.parseInt(process.argv[2])));
