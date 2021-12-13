@@ -2,8 +2,12 @@
 const args = process.argv[2];
 const words = 'C is fun';
 
-let i = 0;
-while (i < args) {
-  console.log(words);
-  i++;
+if (Number.isNaN(args) || args === undefined) {
+  console.log('Missing number of occurrences');
+} else {
+  let i = 0;
+  while (i < args) {
+    console.log(words);
+    i++;
+  }
 }
