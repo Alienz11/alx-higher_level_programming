@@ -1,0 +1,1 @@
+This folder/directory displays all the under-pinnings of the Introductory Stages in Javascript programming language
