@@ -1,0 +1,1 @@
+**This folder/directory displays all the under-pinnings of the Objects, Scopes and Closures in Javascript programming language**
